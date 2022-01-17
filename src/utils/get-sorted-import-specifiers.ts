@@ -1,6 +1,6 @@
 import { ImportDeclaration } from '@babel/types';
 
-import { naturalSort, sort } from '../natural-sort';
+import { naturalSortComparatorFunction, sort } from '../natural-sort';
 
 /**
  * This function returns import nodes with alphabetically sorted module
@@ -13,7 +13,7 @@ export const getSortedImportSpecifiers = (node: ImportDeclaration) => {
             return a.type === 'ImportDefaultSpecifier' ? -1 : 1;
         }
 
-        return naturalSort(a.local.name, b.local.name);
+        return naturalSortComparatorFunction(a.local.name, b.local.name);
     });
     return node;
 };

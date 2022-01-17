@@ -1,4 +1,4 @@
-import javascriptNaturalSort from 'javascript-natural-sort';
+import naturalSort from 'javascript-natural-sort';
 import { sort as timsort } from 'timsort';
 
 /**
@@ -19,4 +19,4 @@ export const sort = <T>(
     return array;
 };
 
-export const naturalSort = javascriptNaturalSort;
+export const naturalSortComparatorFunction = naturalSort;
