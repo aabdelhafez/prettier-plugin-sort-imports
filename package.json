@@ -38,13 +38,15 @@
     "@babel/traverse": "7.13.0",
     "@babel/types": "7.13.0",
     "javascript-natural-sort": "0.7.1",
-    "lodash": "4.17.21"
+    "lodash": "4.17.21",
+    "timsort": "^0.3.0"
   },
   "devDependencies": {
     "@types/chai": "4.2.15",
     "@types/jest": "26.0.20",
-    "@types/node": "14.14.34",
     "@types/lodash": "4.14.168",
+    "@types/node": "14.14.34",
+    "@types/timsort": "^0.3.0",
     "jest": "26.6.3",
     "prettier": "2.3.1",
     "ts-jest": "26.5.3",
