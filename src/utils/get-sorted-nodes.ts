@@ -2,7 +2,7 @@ import { addComments, removeComments } from '@babel/types';
 import { clone, isEqual } from 'lodash';
 
 import { THIRD_PARTY_MODULES_SPECIAL_WORD, newLineNode } from '../constants';
-import { naturalSort } from '../natural-sort';
+import { naturalSort, sort } from '../natural-sort';
 import { GetSortedNodes, ImportGroups, ImportOrLine } from '../types';
 import { getImportNodesMatchedGroup } from './get-import-nodes-matched-group';
 import { getSortedImportSpecifiers } from './get-sorted-import-specifiers';
@@ -51,7 +51,7 @@ export const getSortedNodes: GetSortedNodes = (nodes, options) => {
 
         if (groupNodes.length === 0) continue;
 
-        const sortedInsideGroup = groupNodes.sort((a, b) =>
+        const sortedInsideGroup = sort(groupNodes, (a, b) =>
             naturalSort(a.source.value, b.source.value),
         );
 
